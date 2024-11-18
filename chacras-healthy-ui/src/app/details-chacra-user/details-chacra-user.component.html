@@ -1,0 +1,15 @@
+<div class="page-title">
+    <h1>Detalles de la Chacra</h1>
+  </div>
+  
+  <div *ngIf="!chacra" class="loading">
+    <p>Cargando detalles...</p>
+  </div>
+  
+  <div *ngIf="chacra" class="details-container">
+    <p><strong>Título:</strong> {{ chacra.title }}</p>
+    <p><strong>Descripción:</strong> {{ chacra.description }}</p>
+    <p><strong>Horario de Atención:</strong> {{ chacra.openingHours }}</p>
+    <p><strong>Usuario Asociado:</strong> {{ chacra.user.name }}</p>
+  </div>
+  

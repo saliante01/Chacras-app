@@ -1,0 +1,56 @@
+/* Título principal */
+.page-title {
+    text-align: center;
+    margin: 20px 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .page-title h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #4caf50; /* Verde saludable */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0;
+  }
+  
+  /* Contenedor de los detalles */
+  .details-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 24px;
+    border: 2px solid #4caf50; /* Borde verde */
+    border-radius: 8px;
+    background-color: #f9fff9; /* Fondo blanco verdoso */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 30px;
+    margin-top: 70px;
+  }
+  
+  /* Encabezado del recuadro */
+  .details-container h1 {
+    margin-bottom: 16px;
+    font-size: 2rem;
+    color: #2e7d32; /* Verde oscuro */
+    text-align: center;
+  }
+  
+  /* Texto dentro del recuadro */
+  .details-container p {
+    margin: 8px 0;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .details-container strong {
+    font-weight: bold;
+    color: #4caf50; /* Verde para resaltar */
+  }
+  
+  /* Estilo de carga */
+  .loading {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #777;
+    margin-top: 20px;
+  }
+  

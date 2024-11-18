@@ -1,0 +1,54 @@
+<div class="page-title">
+    <h1>Mis Chacras</h1>
+    <button (click)="goToCreateForm()" class="btn-create">Crear una nueva chacra</button>
+  </div>
+  
+  <div *ngIf="chacras.length === 0" class="loading">
+    <p>No tienes chacras registradas o están cargando...</p>
+  </div>
+  
+  <div *ngIf="chacras.length > 0" class="chacras-list">
+    <div *ngFor="let chacra of chacras" class="chacra-card">
+      <h2>{{ chacra.title }}</h2>
+      <p><strong>Descripción:</strong> {{ chacra.description }}</p>
+      <p><strong>Horario de atención:</strong> {{ chacra.openingHours }}</p>
+      <button (click)="deleteChacra(chacra.id)" class="btn-delete">Eliminar</button>
+      <button (click)="startEditing(chacra)" class="btn-edit">Editar</button>
+    </div>
+  </div>
+  
+  <!-- Formulario sobrepuesto -->
+  <div *ngIf="editingChacra" class="overlay">
+    <div class="modal">
+      <h2>Editar Chacra</h2>
+      <form (ngSubmit)="saveChacra()">
+        <div class="form-group">
+          <label for="title">Título</label>
+          <input type="text" id="title" [(ngModel)]="editedData.title" name="title" required />
+        </div>
+  
+        <div class="form-group">
+          <label for="description">Descripción</label>
+          <textarea id="description" [(ngModel)]="editedData.description" name="description" required></textarea>
+        </div>
+  
+        <div class="form-group">
+          <label for="openingHours">Horario de Atención</label>
+          <input
+            type="text"
+            id="openingHours"
+            [(ngModel)]="editedData.openingHours"
+            name="openingHours"
+            placeholder="Ejemplo: 10:00 AM - 6:00 PM"
+            required
+          />
+        </div>
+  
+        <div class="form-actions">
+          <button type="submit" class="btn-submit">Guardar</button>
+          <button type="button" (click)="cancelEditing()" class="btn-cancel">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

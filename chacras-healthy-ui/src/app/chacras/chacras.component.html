@@ -1,0 +1,28 @@
+<div class="header">
+  <div class="page-title">
+    <h1>CHACRAS HEALTHY</h1>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Menú</button>
+    <div class="dropdown-content">
+      <button (click)="navigateTo('login-admin')">Login Admin</button>
+      <button (click)="navigateTo('login-user')">Login User</button>
+    </div>
+  </div>
+</div>
+
+
+  
+  <div *ngIf="chacras.length === 0" class="loading">
+    <p>Cargando chacras...</p>
+  </div>
+  
+  <div *ngIf="chacras.length > 0" class="chacras-list">
+    <div *ngFor="let chacra of chacras" class="chacra-card" (click)="goToDetails(chacra.id)">
+      <h2>{{ chacra.title }}</h2>
+      <p><strong>Descripción:</strong> {{ chacra.description }}</p>
+      <p><strong>Horario:</strong> {{ chacra.openingHours }}</p>
+      <p><strong>Usuario:</strong> {{ chacra.user.name }}</p>
+    </div>
+  </div>
+  

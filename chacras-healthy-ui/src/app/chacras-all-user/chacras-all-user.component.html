@@ -1,0 +1,21 @@
+<div class="page-title">
+    <h1>Chacras Disponibles</h1>
+  </div>
+  
+  <div class="button-container">
+    <button (click)="goToMyChacras()" class="btn-my-chacras">Mis Chacras</button>
+  </div>
+  
+  <div *ngIf="chacras.length === 0" class="loading">
+    <p>Cargando chacras...</p>
+  </div>
+  
+  <div *ngIf="chacras.length > 0" class="chacras-list">
+    <div *ngFor="let chacra of chacras" class="chacra-card" (click)="goToDetails(chacra.id)">
+      <h2>{{ chacra.title }}</h2>
+      <p><strong>Descripción:</strong> {{ chacra.description }}</p>
+      <p><strong>Horario de atención:</strong> {{ chacra.openingHours }}</p>
+      <p><strong>Usuario asociado:</strong> {{ chacra.user.name }}</p>
+    </div>
+  </div>
+  
